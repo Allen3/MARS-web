@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=" http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>MARS Proxy</title>
+	<link rel="stylesheet" href="./styles/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./styles/init.css">
+	<link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+	<h1>MARS Proxy Quick Guide</h1>
+	<hr />
+	<div id="downloads">
+		<h2>Downloads</h2>
+		<ul>
+			<li><a href="http://multiagent.com.cn/Shadowsocks_Bundle/Shadowsocks-win-dotnet4.0-2.3.zip"><i class="fa fa-windows"></i>&nbsp;GUI Client for Windows 8</a></li>
+			<li><a href="http://multiagent.com.cn/Shadowsocks_Bundle/Shadowsocks-win-2.3.zip"><i class="fa fa-windows"></i>&nbsp;GUI Client for Windows 7 or below</a></li>
+			<li><a href="http://multiagent.com.cn/Shadowsocks_Bundle/ShadowsocksX-2.6.1.dmg"><i class="fa fa-apple"></i>&nbsp;GUI Client for MAC</a></li>
+			<li><a href="http://multiagent.com.cn/Shadowsocks_Bundle/shadowsocks-2.6.8.tar.gz"><i class="fa fa-linux"></i>&nbsp;Command-line Client for Linux</a></li>
+			<li><a href="http://multiagent.com.cn/Shadowsocks_Bundle/com.github.shadowsocks_102.apk"><i class="fa fa-android"></i>&nbsp;App for Android</a></li>
+			<li><i class="fa fa-apple"></i>&nbsp;App for iOS(search Shadowsocks in App Store)</li>
+			<li><a href="http://apt.thebigboss.org/onepackage.php?bundleid=com.linusyang.shadowsocks"><i class="fa fa-apple"></i>&nbsp;App for iOS(for Jailbroken devices)</a></li>
+		</ul>
+	</div>
+	<div id="brief">
+		<p>This is the tutorial on how to configure your clients on different platforms to make it work.</p>
+	</div>
+	<div id="guide">
+		<div id="gui">
+			<h3>GUI Client<span></span></h3>
+			<ol>
+				<li>Install the Client application.</li>
+				<li>Open the Client and find a table where we can set the parameters.</li>
+				<li>
+					<p>Edit the Parameters.</p>
+					<ul>
+						<li>Server IP: 113.10.149.131</li>
+						<li>Server port: 12345 </li>
+						<li>password: <span style="font-weight:bold">Please ask the administrator for it.</span></li>
+						<li>Encryption method: rc4-md5</li>
+						<li>Remark: MARS_HK(or something like that, fill it free)</li>
+						<li>Proxy Port: 1080(leave it default value, it's the local port for this program, you may change as you need)</li>
+					</ul>
+				</li>
+				<li>Save the settings and close the window. Find shadowsocks background program(For windows, among the hidden icons in the right-bottom corner), right-click it.</li>
+				<li>Tick the Server->MARS_HK and System Proxy Mode->Global Mode and select Start System Proxy.</li>
+			</ol>
+		</div>
+		<div id="cmd">
+			<h3>Command-line Client for Linux<span></span></h3>
+			<ol>
+				<li>
+					<p>Unzip the package and install the Client.</p>
+						<ul id="install">
+							<li>
+								<p>Debian/Ubuntu:</p>
+								<div class="code">
+									<p><code># apt-get install python-pip</code></p>
+									<p><code># pip install shadowsocks</code></p>
+								</div>
+							</li>
+							<li>
+								<p>CentOS:</p>
+								<div class="code">
+									<p><code># yum install python-setuptools && easy_install pip </code></p>
+									<p><code># pip install shadowsocks</code></p>
+								</div>
+							</li>
+						</ul>
+				</li>
+				<li>
+					<p>Configure the parameters and run the program.<span style="font-weight:bold">(Ask the administrator for server_address and password)</span></p>
+						<ul>
+							<li>
+								<p>Run the shadowsocks as daemon, just type the following commands: </p>
+								<div class="code">
+									<p><code># sslocal -s server_address -p 12345 -k password -m rc4-md5 -d start</code></p>
+								</div>
+							</li>
+						</ul>
+				</li>
+				<li>
+					<p>Also, you can write a config file so each time you don't have to type these lengthy params by hand.(Alternative)</p>
+						<ul>
+							<li>
+								<p>Create a config file.</p>
+								<div class = "code">
+									<p><code># touch /etc/shadowsocks.json</code></p>
+								</div>
+							</li>
+
+							<li>
+							<p>And add the contents as follow:<br> 
+								{<br> 
+								"server" : 113.10.149.131,<br>  
+								"server_port" : 12345,<br>  
+								"local_port" : 12345,<br>
+								"password" : <span style="font-weight:bold">Please ask the administrator</span>,<br>  
+								"method" : "rc4-md5" <br> 
+								}</p>
+							</li>
+							<li>
+								<p>Then run the command:</p>
+								<div class="code">
+									<p><code># sslocal -c /etc/shadowsocks.json -d start</code></p>
+								</div>
+							</li>
+						</ul>
+				</li>
+			</ol>
+		</div>
+		<div id="troubleshooting">
+			<h3>Troubleshooting<span></span></h3>
+			<p>The iOS version has an integrated Chrome web browser and has following restrictions if you plan to use this as a global proxy.</p>
+			<ul>
+				<li>Only works with Wi-Fi network.</li>
+				<li>Only works for several minutes. Due to iOS restrictions, Shadowsocks can't keep running in the background. It's killed after you leave it for a while. <span style="font-weight:bold">To keep it running for an extended period of time, you have to come back to the Shadowsocks app every few minutes</span>.</li>
+			</ul>
+			<br/>
+			<p>So, it's a bit tricky to set shadowsocks as global proxy.</p>
+			<ol>
+				<li>Set up proxy settings in shadowsocks.(like the GUI version)</li>
+				<li>Copy this link <span style="color:blue">http://127.0.0.1:8090/proxy.pac</span></li>
+				<li>Open iOS Settings -> Wi-Fi -><code> i </code> icon on the right of your connected Wi-Fi -> HTTP Proxy. Choose Auto, paste the link in the URL field. Tap back.</li>
+				<li>Other apps now go through the proxy. If they don't, kill and restart them.</li>
+				<li>Come back every few minutes to keep Shadowsocks running in the background.</li>
+			</ol>
+
+			<hr/>
+
+			<p>The Linux user has some more steps to set in order to make the proxy work in different situations.</p>
+			<ul>
+				<li> For web browse
+					<ol>
+						<li>Get a proxy setting tool for browser. For Chrome, use <code>switchySharp</code> or <code>switchyOmega</code>. For others, go find yourself. :)</li>
+						<li>For Global Proxy. Create a new proxy profile. Choose <span style="font-weight:bold">Proxy Profile</span>. Select the <span style="font-weight:bold">Protocol</span> tab as <code>SOCKS5</code>, fill the <span style="font-weight:bold">Server</span> as <code>127.0.0.1</code>,  with the <span style="font-weight:bold">Port</span> as <code>12345</code>.</li>
+						<li>For PAC Proxy. Create a new proxy profile. Choose <span style="font-weight:bold">Switch Profile</span>. In the <span style="font-weight:bold">Rule List Config</span>, select <span style="font-weight:bold">AutoProxy</span> and fill this URL <span style="color:blue">http://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt</span>. And in the <span style="font-weight:bold">Switchy Rules</span>, enable the Rule list rules as the global proxy you set in the last step.
+					</ol>
+				</li>
+				<br/>				
+				<li> For command-line Proxy
+				<p>Please forward to <a href="https://github.com/shadowsocks/shadowsocks/wiki/Using-Shadowsocks-with-Command-Line-Tools">this issue on github</a> to find a solution.</p>
+				</li>
+			</ul>
+
+		</div>
+		<div id="qa">
+			<h3>Q&A<span></span></h3>
+			<p>If you meet any problem, please contact <span style="font-weight:bold">Administrator(Allen.3.ysj@gmail.com)</span>.</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<footer style="width: 350px;margin:2px auto">Copyright &copy;2015 MARS. All Rights Reserved.</footer>
+</body>
+</html>

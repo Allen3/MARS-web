@@ -1,0 +1,93 @@
+.clear {
+	clear: both;
+}
+
+body {
+	font-family: "ubuntu";
+	font-size: 16px;
+	line-height: 18px;
+	width: 1314px;
+	margin: 10px auto;
+	color: #8d8d8d;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 40px;
+	width: 100%;
+}
+
+#downloads ul {
+	margin-left: 2px;
+}
+
+#downloads ul li {
+	list-style: none;
+	margin: 2px 0 3px;
+}
+
+#downloads a {
+	color: #1c9b47;
+}
+
+#downloads h2 {
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 22px;
+	margin-bottom: 10px;
+}
+
+#downloads {
+	width: 400px;
+	height: 190px;
+	float: right;
+	background-color: #eeeeee;
+	padding: 2px 0 0 2px;
+}
+
+#brief {
+	margin: 30px 0 20px;
+}
+
+#guide h3 {
+	font-size: 18px;
+	line-height: 26px;
+	padding: 5px 0 10px;
+	border-bottom: 1px solid #cccccc;
+}
+
+#guide h3 span {
+	width: 50px;
+	height: 4px;
+	background-color: #1c9b47;
+	display: block;
+	margin: 7px 0 -11px;
+}
+
+/*
+#guide ul li {
+	list-style: none;
+}
+*/
+
+#guide ul#install li {
+	list-style: circle;
+}
+
+#guide ol {
+	margin-top: 15px;
+}
+
+#guide ol li {
+	margin: 2px 0 5px 3px;
+}
+
+#guide .code {
+	background: #ebebe4;
+	margin: 10px 0;
+}
+
+#qa p {
+	margin: 15px 0;
+}
