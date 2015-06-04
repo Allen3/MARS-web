@@ -1,0 +1,122 @@
+/*
+
+My Custom CSS
+=============
+
+Author:  Brad Hussey
+Updated: August 2013
+Notes:	 Hand coded for Udemy.com
+
+*/
+
+
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+.well .page-header {
+	margin-top: 0px;
+}
+
+.well .page-header h1 {
+	margin-top: 0px;
+}
+
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+#searchInput {
+    width: 200px;
+
+}
+
+.navbar-brand {
+	padding: 13px 15px;
+}
+
+/* --------------------------------------
+   Carousel
+   -------------------------------------- */
+#myCarousel {
+	margin-top: 60px;
+}
+
+.carousel-caption {
+	font-size: 24px;
+}
+
+.carousel-caption h4 {
+	font-size: 32px;
+}
+
+#myCarousel .item { 	height: 400px; }
+
+#slide1 {
+	background: url('../../images/carousel_medium_01.jpg') top center no-repeat;
+}
+
+#slide2 {
+	background: url('../../images/carousel_medium_02.jpg') top center no-repeat;
+}
+
+
+/* --------------------------------------
+   Global Styles
+   -------------------------------------- */
+.col-12 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.well {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#ProxyWellContainer, #CloudWellContainer {
+	float: left;
+}
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+	
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	#myCarousel .item { 	height: 310px; }
+
+	#slide1 {
+		background: url('../../images/carousel_small_01.jpg') top center no-repeat;
+	}
+
+	#slide2 {
+		background: url('../../images/carousel_small_02.jpg') top center no-repeat;
+	}
+	
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+	#myCarousel .item { 	height: 500px; }
+
+	#slide1 {
+		background: url('../../images/shadowsocks.png') top center no-repeat;
+	}
+
+	#slide2 {
+		background: url('../../images/carousel_large_02.jpg') top center no-repeat;
+	}
+	
+}

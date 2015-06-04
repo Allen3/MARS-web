@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		
+		<!-- Website Title & Description for Search Engine purposes -->
+		<title></title>
+		<meta name="description" content="">
+		
+		<!-- Mobile viewport optimized -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+		
+		<!-- Custom CSS -->
+		<link href="includes/css/styles.css" rel="stylesheet">
+		
+		<!-- Include Modernizr in the head, before any other Javascript -->
+		<script src="includes/js/modernizr-2.6.2.min.js"></script>
+		
+	</head>
+	<body>
+	
+		<div class="container" id="main">
+            <div class="navbar navbar-fixed-up">
+                <div class="container" >
+
+					<button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+
+					</button><!-- navbar-toggle -->
+
+                    <a class="navbar-brand" href="/"><img src="images/logo.png" alt="Your logo"></a>
+
+                    <div class="nav-collapse collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav">
+
+                            <li class="active"><a href="#">Home</a></li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services<strong class="caret"></strong></a>
+
+								<ul class="dropdown-menu">
+
+									<li><a href="#">Working on...</a></li>
+
+									<li><a href="#">Working on...</a></li>
+
+									<li class="divider"></li>
+
+									<li class="dropdown-header">Tutorials</li>
+
+									<li><a href="#">Proxy</a></li>
+
+									<li><a href="#">Cloud</a></li>
+
+								</ul><!-- dropdown-menu -->
+                            </li>
+                        </ul><!-- end nav -->
+
+                        <form class="navbar-form pull-left">
+                            <input type="text" class="form-control" placeholder="Search this site..." id="searchInput">
+
+                            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                        </form><!-- end navbar-form-->
+
+
+                        <ul class="nav navbar-nav pull-right">
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-user"></span>My Account</a>
+                            </li>
+                        </ul><!-- end nav-->
+
+                    </div><!-- end nav-collpase-->
+
+                </div><!-- end container-->
+            </div><!-- end navbar -->
+
+
+			<div class="jumbotron" id="myJumbotron">
+
+				<h1>MARS LAB</h1>
+				<p>We are lovely university students working on some creative ideas.</p>
+
+			</div><!-- end myJumbotron -->
+
+
+            <div class="carousel slide" id="myCarousel">
+
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+					<li data-slide-to="1" data-target="#myCarousel"></li>
+				</ol><!-- end carousel-indicators -->
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+
+					<div class="item active" id="slide1">
+						<div class="carousel-caption">
+							<h4>MarsProxy</h4>
+							<p>A socks5 proxy to acess websites which are blocked by GFW</p>
+						</div><!-- end carousel-caption -->
+					</div><!-- end item slide1 -->
+
+					<div class="item" id="slide2">
+						<div class="carousel-caption">
+							<h4>MarsCloud</h4>
+							<p>A Dropbox like platform deployed on LAN of our lab to manage files safely.</p>
+						</div><!-- end carousel-caption -->
+					</div><!-- end item slide2-->
+
+				</div><!-- carousel-inner -->
+
+				<!-- Controls -->
+				<a class="left carousel-control" data-slide="prev" href="#myCarousel"><span class="icon-prev"></span></a>
+				<a class="right carousel-control" data-slide="next" href="#myCarousel"><span class="icon-next"></span></a>
+
+            </div><!-- end myCarousel-->
+
+
+            <div class="row" id="bigCallout">
+				<div class="col-12">
+
+					<div class="col-6" id="ProxyWellContainer">
+						<div class="well" id="MarsProxyWell">
+							<div class="page-header">
+								<h3>MarsProxy</h3>	
+							</div><!-- end page-header -->
+
+							<p class="lead">We are lovely university students working on some creative ideas.</p>
+						
+							<a href="" class="btn btn-large btn-primary">Click here</a>
+						</div><!-- end MarsProxyWell -->
+					</div><!-- end ProxyWellContainer -->
+
+					<div class="col-6" id="CloudWellContainer">
+						<div class="well" id="MarsCloudWell">
+							<div class="page-header">
+								<h3>MarsCloud</h3>	
+							</div><!-- end page-header -->
+
+							<p class="lead">We are lovely university students working on some creative ideas.</p>
+						
+							<a href="" class="btn btn-large btn-primary">Click here</a>
+						</div><!-- end MarsCloudWell -->
+					</div><!-- end CloudWellContainer -->
+
+				</div><!-- end col-12 -->
+
+            </div><!-- end bigCallout -->
+
+
+            <div class="row" id="featuresHeading">
+            </div><!-- end featuresHeading -->
+
+
+            <div class="row" id="features">
+            </div><!-- end features -->
+
+
+            <div class="row" id="moreInfo">
+            </div><!-- end moreInfo -->
+
+
+            <div class="row" id="moreCourses">
+            </div><!-- end moreCourses -->
+
+		</div><!-- end container -->
+
+        <footer>
+            
+        </footer><!-- end footer -->
+	
+
+	<!-- All Javascript at the bottom of the page for faster page loading -->
+		
+	<!-- First try for the online version of jQuery-->
+	<script src="http://code.jquery.com/jquery.js"></script>
+	
+	<!-- If no online access, fallback to our hardcoded version of jQuery -->
+	<script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+	
+	<!-- Bootstrap JS -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- Custom JS -->
+	<script src="includes/js/script.js"></script>
+	
+	</body>
+</html>
+
