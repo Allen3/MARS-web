@@ -81,9 +81,14 @@
 
       </div><!-- end navBar -->
 
+      <div class="jumbotron">
+        <h1>Mars Proxy</h1>
+        <p>Please download the proper application served on the navigation bar.</p>
+        <p><a class="btn btn-primary btn-lg" href="#tutorialBody" role="button">Tutorial</a></p>
+      </div>
+
       <div class="row" id="tutorialBody">
         <div class="col-sm-12">
-          <h2>Tutorial</h2>
 
           <div class="tabbable">
 						<ul class="nav nav-tabs">
@@ -93,25 +98,128 @@
 
             <div class="tab-content">
 							<div class="tab-pane active" id="tab1">
-                <h3>GUI Client<span></span></h3>
-          			<ol>
-          				<li>Install the Client application.</li>
-          				<li>Open the Client and find a table where we can set the parameters.</li>
-          				<li>
-          					<p>Edit the Parameters.</p>
-          					<ul>
-          						<li>Address: <span style="font-weight:bold">Please ask the administrator for it.</span></li>
-          						<li>Server port: <span style="font-weight:bold">Please ask the administrator for it.</span></li>
-          						<li>password: <span style="font-weight:bold">Please ask the administrator for it.</span></li>
-          						<li>Encryption method: rc4-md5</li>
-          						<li>Remark: MARS_PROXY(or something like that, fill it free)</li>
-          						<li>Proxy Port: 1080(leave it default value, it's the local port for this program, you may change as you need)</li>
+                <h2>GUI Clients<span></span></h2>
+                <ul class="list-group">
+                  <li class="list-group-item list-group-item-warning">
+                    <h3 class="list-group-item-heading">Install</h3>
+
+                    <p class="list-group-item-text">Install the desktop/mobile application on your local machine.</p>
+                  </li>
+
+                  <li class="list-group-item">
+          					<h3 class="list-group-item-heading">Edit the Parameters.</h3>
+
+                    <p class="list-group-item-text">Run the application and edit the configuration parameters.</p>
+          					<ul class="list-group">
+          						<li class="list-group-item">Address: <span class="badge">Please ask the administrator</span></li>
+          						<li class="list-group-item">Server port: <span class="badge">Please ask the administrator</span></li>
+          						<li class="list-group-item">password: <span class="badge">Please ask the administrator</span></li>
+          						<li class="list-group-item">Encryption method: rc4-md5</li>
+          						<li class="list-group-item">Remark: MarsProxy</li>
+          						<li class="list-group-item">Proxy Port: <span class="badge">Please ask the administrator</span></li>
           					</ul>
           				</li>
-          				<li>Save the settings and close the window. Find shadowsocks background program(For windows, among the hidden icons in the right-bottom corner), right-click it.</li>
-          				<li>Tick the Server->MARS_PROXY and System Proxy Mode->Global Mode and select Start System Proxy.</li>
-          			</ol>
-							</div><!-- end tab-pane -->
+
+                  <li class="list-group-item">
+                    <h3 class="list-group-item-heading">Advanced configuration</h3>
+
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Save the configuration.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Rightclick the background running program.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Choose <span class="label label-primary">MarsProxy</span> in <span class="label label-primary">Server</span> tab of main menu.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Click <span class="label label-primary">Update PAC from GFWList</span> of main menu and wait for its finishing.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Choose <span class="label label-primary">PAC Mode</span>in <span class="label label-primary">System Proxy Mode</span> of main menu.</p>
+                      </li>
+                    </ul>
+
+                  </li>
+
+                  <li class="list-group-item">
+                    <h3 class="list-group-item-heading">Enable configuration</h3>
+
+                    <p class="list-group-item-text">Choose <span class="label label-primary">Launch system proxy</span> in the main menu.</p>
+                  </li>
+                </ul><!-- end list-group -->
+							</div><!-- end tab1 -->
+
+              <div class="tab-pane" id="tab2">
+                <h2>Command-line Client for Linux<span></span></h2>
+          			<ul class="list-group">
+          				<li class="list-group-item">
+          					<h3 class="list-group-item-heading">Unzip the package and install the Client.</h3>
+
+                    <h4 class="list-group-item-heading"><span class="label label-primary">Debian/Ubuntu</span></h4>
+                    <div class="code">
+                      <p><code># apt-get install python-pip</code></p>
+                      <p><code># pip install shadowsocks</code></p>
+                    </div>
+
+
+                    <h4 class="list-group-item-heading"><span class="label label-primary">CentOS</span></h4>
+                    <div class="code">
+                      <p><code># yum install python-setuptools && easy_install pip </code></p>
+                      <p><code># pip install shadowsocks</code></p>
+                    </div>
+          				</li>
+
+          				<li class="list-group-item">
+          					<h3 class="list-group-item-heading">Configure the parameters and run the program.</span></h3>
+
+                    <p>Run the shadowsocks as daemon, just type the following commands: </p>
+
+                    <span class="badge">Please ask the administrator for vital fields</span>
+                    <div class="code">
+                      <p><code># sslocal -s server_address -p port_number -k password -m rc4-md5 -d start</code></p>
+                    </div>
+          				</li>
+
+          				<li class="list-group-item">
+          					<h3>Lauch Configuration Files(Alternative)</h3>
+
+          					<ul class="list-group">
+          						<li class="list-group-item">
+          							<h4>Create a config file.</h4>
+          							<div class = "code">
+          								<p><code># touch /etc/shadowsocks.json</code></p>
+          							</div>
+          						</li>
+
+          						<li class="list-group-item">
+          						  <h4>Includes following entries inside a pair of braces</h4>
+
+                        <ul class="list-group">
+                          <li class="list-group-item">"server" : "myServerAddress"<span class="badge">Please ask the administrator</span></li>
+                          <li class="list-group-item">"server_port" : 00000<span class="badge">Please ask the administrator</span></li>
+                          <li class="list-group-item">"local_port" : 00000<span class="badge">Please ask the administrator</span></li>
+                          <li class="list-group-item">"password" : "blablabla"<span class="badge">Please ask the administrator</span></li>
+                          <li class="list-group-item">"method" : "rc4-md5"</li>
+                        </ul>
+
+          						</li>
+
+          						<li class="list-group-item">
+          							<p>Then run the command:</p>
+          							<div class="code">
+          								<p><code># sslocal -c /etc/shadowsocks.json -d start</code></p>
+          							</div>
+          						</li>
+          					</ul>
+          				</li>
+          			</ul>
+							</div><!-- end tab2 -->
             </div><!-- end tab-content -->
 
 
@@ -121,6 +229,27 @@
         </div><!-- end col-sm-12 -->
       </div><!-- end tutorialBody -->
 
+      <div class="row" id="bigCallout">
+				<div class="col-12">
+
+					<div class="well">
+						<div class="page-header">
+							<h1>SwitchyOmega <small>A plug-in inside Chrome to manage proxies.</small></h1>
+						</div><!-- end page-header -->
+
+						<p class="lead">SwitchyOmega is a perfect match of MarsProxy to make your proxies
+              switching easily and smoothly, which is a necessary gadget
+              for <i class="fa fa-linux"></i>Linux user.(Optional for <i class="fa fa-windows"></i>Windows and <i class="fa fa-apple"></i>OS X user)</p>
+
+            <p class="lead">It can be grabbed from <i class="fa fa-google"></i>Google Play Store or just click the button below for an "offline installation" package.
+              And refer to the link beside to learn how to use it.</p>
+
+						<a href="https://github.com/FelisCatus/SwitchyOmega/releases/download/v2.3.14/SwitchyOmega.crx" class="btn btn-large btn-primary" id="alertMe">Download .crx Package</a>
+						<a href="https://github.com/FelisCatus/SwitchyOmega/releases" class="btn btn-large btn-link">or Official Release Info.</a>
+					</div><!-- end well -->
+
+				</div><!-- end col-12 -->
+			</div><!-- end bigCallout -->
 
 
     </div><!-- end main -->
