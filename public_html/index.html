@@ -1,155 +1,337 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns=" http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>MARS Proxy</title>
-	<link rel="stylesheet" href="./styles/font-awesome-4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./styles/init.css">
-	<link rel="stylesheet" href="./styles/index.css">
-</head>
-<body>
-	<h1>MARS Proxy Quick Guide</h1>
-	<hr />
-	<div id="downloads">
-		<h2>Downloads</h2>
-		<ul>
-			<li><a href="http://www.multiagent.com.cn/Shadowsocks_Bundle/Shadowsocks-win-dotnet4.0-2.3.zip"><i class="fa fa-windows"></i>&nbsp;GUI Client for Windows 8</a></li>
-			<li><a href="http://www.multiagent.com.cn/Shadowsocks_Bundle/Shadowsocks-win-2.3.zip"><i class="fa fa-windows"></i>&nbsp;GUI Client for Windows 7 or below</a></li>
-			<li><a href="http://www.multiagent.com.cn/Shadowsocks_Bundle/ShadowsocksX-2.6.1.dmg"><i class="fa fa-apple"></i>&nbsp;GUI Client for MAC</a></li>
-			<li><a href="http://www.multiagent.com.cn/Shadowsocks_Bundle/shadowsocks-2.6.8.tar.gz"><i class="fa fa-linux"></i>&nbsp;Command-line Client for Linux</a></li>
-			<li><a href="http://www.multiagent.com.cn/Shadowsocks_Bundle/com.github.shadowsocks_102.apk"><i class="fa fa-android"></i>&nbsp;App for Android</a></li>
-			<li><i class="fa fa-apple"></i>&nbsp;App for iOS(search Shadowsocks in App Store)</li>
-			<li><a href="http://apt.thebigboss.org/onepackage.php?bundleid=com.linusyang.shadowsocks"><i class="fa fa-apple"></i>&nbsp;App for iOS(for Jailbroken devices)</a></li>
-		</ul>
-	</div>
-	<div id="brief">
-		<p>This is the tutorial on how to configure your clients on different platforms to make it work.</p>
-	</div>
-	<div id="guide">
-		<div id="gui">
-			<h3>GUI Client<span></span></h3>
-			<ol>
-				<li>Install the Client application.</li>
-				<li>Open the Client and find a table where we can set the parameters.</li>
-				<li>
-					<p>Edit the Parameters.</p>
-					<ul>
-						<li>Address: <span style="font-weight:bold">Please ask the administrator for it.</span></li>
-						<li>Server port: <span style="font-weight:bold">Please ask the administrator for it.</span></li>
-						<li>password: <span style="font-weight:bold">Please ask the administrator for it.</span></li>
-						<li>Encryption method: rc4-md5</li>
-						<li>Remark: MARS_PROXY(or something like that, fill it free)</li>
-						<li>Proxy Port: 1080(leave it default value, it's the local port for this program, you may change as you need)</li>
-					</ul>
-				</li>
-				<li>Save the settings and close the window. Find shadowsocks background program(For windows, among the hidden icons in the right-bottom corner), right-click it.</li>
-				<li>Tick the Server->MARS_PROXY and System Proxy Mode->Global Mode and select Start System Proxy.</li>
-			</ol>
-		</div>
-		<div id="cmd">
-			<h3>Command-line Client for Linux<span></span></h3>
-			<ol>
-				<li>
-					<p>Unzip the package and install the Client.</p>
-						<ul id="install">
-							<li>
-								<p>Debian/Ubuntu:</p>
-								<div class="code">
-									<p><code># apt-get install python-pip</code></p>
-									<p><code># pip install shadowsocks</code></p>
-								</div>
-							</li>
-							<li>
-								<p>CentOS:</p>
-								<div class="code">
-									<p><code># yum install python-setuptools && easy_install pip </code></p>
-									<p><code># pip install shadowsocks</code></p>
-								</div>
-							</li>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Website Title -->
+    <title>MARS Proxy</title>
+
+    <!-- Bootstrap CSS-->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" >
+
+    <!-- Custom CSS -->
+    <link href="includes/css/style.css" rel="stylesheet">
+
+    <!-- Include Modernizr in the head, before any other Javascript -->
+		<script src="includes/js/modernizr-2.6.2.min.js"></script>
+  </head>
+
+
+  <body>
+
+    <div class="container" id="main">
+
+      <div class="navbar navbar-fixed-top", id="navbar">
+        <div class="container">
+
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+					<button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+          <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Your logo"></a>
+
+          <div class="nav-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+
+              <li class="active"><a href="#">Home</a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <strong class="caret"></strong></a>
+
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header">Tutorials</li>
+
+									<li><a href="#">MarsProxy</a></li>
+
+									<li><a href="#">MarsCloud</a></li>
+
+                </ul><!-- end dropdown-menu -->
+              </li>
+            </ul><!-- end nav navbar -->
+
+            <ul class="nav navbar-nav pull-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Downloads <strong class="caret"></strong></a>
+
+                <ul class="dropdown-menu list-group" id="downloadMenu">
+                  <li class="list-group-item"><a href="Shadowsocks_Bundle/Shadowsocks-win-dotnet4.0-2.3.zip"><i class="fa fa-windows"></i>&nbsp;GUI Client for Windows 8</a></li>
+            			<li class="list-group-item"><a href="Shadowsocks_Bundle/Shadowsocks-win-2.3.zip"><i class="fa fa-windows"></i>&nbsp;GUI Client for Windows 7 or below</a></li>
+            			<li class="list-group-item"><a href="Shadowsocks_Bundle/ShadowsocksX-2.6.1.dmg"><i class="fa fa-apple"></i>&nbsp;GUI Client for MAC</a></li>
+            			<li class="list-group-item"><a href="Shadowsocks_Bundle/shadowsocks-2.6.8.tar.gz"><i class="fa fa-linux"></i>&nbsp;Command-line Client for Linux</a></li>
+            			<li class="list-group-item"><a href="Shadowsocks_Bundle/com.github.shadowsocks_102.apk"><i class="fa fa-android"></i>&nbsp;App for Android</a></li>
+            			<li class="list-group-item disabled"><a href="#"><i class="fa fa-apple"></i>&nbsp;App for iOS(search Shadowsocks in App Store)</a></li>
+            			<li class="list-group-item"><a href="http://apt.thebigboss.org/onepackage.php?bundleid=com.linusyang.shadowsocks"><i class="fa fa-apple"></i>&nbsp;App for iOS(for Jailbroken devices)</a></li>
+                </ul>
+
+
+              </li><!-- end dropdown -->
+            </ul><!-- end nav navbar pull-right -->
+
+          </div><!-- nav-collapse -->
+
+        </div><!-- end container -->
+
+      </div><!-- end navBar -->
+
+      <div class="jumbotron" id="myJumbotron">
+        <h1>Mars Proxy</h1>
+        <p>Please download the proper application served on the navigation bar.</p>
+        <p><a class="btn btn-primary btn-lg" href="#tutorialBody" role="button" id="tutorialButton">Tutorial</a></p>
+      </div>
+
+      <div class="row" id="tutorialBody">
+        <div class="col-sm-12">
+
+          <div class="tabbable">
+						<ul class="nav nav-tabs" id="tutorialTabs">
+							<li class="active"><a href="#tab1" data-toggle="tab">GUI Clients</a></li>
+							<li><a href="#tab2" data-toggle="tab">Command line clients</a></li>
+              <li><a href="#tab3" data-toggle="tab">SwitchyOmega Configurations</a></li>
 						</ul>
-				</li>
-				<li>
-					<p>Configure the parameters and run the program.<span style="font-weight:bold">(Ask the administrator for server_address and password)</span></p>
-						<ul>
-							<li>
-								<p>Run the shadowsocks as daemon, just type the following commands: </p>
-								<div class="code">
-									<p><code># sslocal -s server_address -p port_number -k password -m rc4-md5 -d start</code></p>
-								</div>
-							</li>
-						</ul>
-				</li>
-				<li>
-					<p>Also, you can write a config file so each time you don't have to type these lengthy params by hand.(Alternative)</p>
-						<ul>
-							<li>
-								<p>Create a config file.</p>
-								<div class = "code">
-									<p><code># touch /etc/shadowsocks.json</code></p>
-								</div>
-							</li>
 
-							<li>
-							<p>And add the contents as follow:<br>
-								{<br>
-								"server" : <span style="font-weight:bold">Please ask the administrator</span>,<br>
-								"server_port" : <span style="font-weight:bold">Please ask the administrator</span>,<br>
-								"local_port" : <span style="font-weight:bold">Please ask the administrator</span>,<br>
-								"password" : <span style="font-weight:bold">Please ask the administrator</span>,<br>
-								"method" : "rc4-md5" <br>
-								}</p>
-							</li>
-							<li>
-								<p>Then run the command:</p>
-								<div class="code">
-									<p><code># sslocal -c /etc/shadowsocks.json -d start</code></p>
-								</div>
-							</li>
-						</ul>
-				</li>
-			</ol>
-		</div>
-		<div id="troubleshooting">
-			<h3>Troubleshooting<span></span></h3>
-			<p>The iOS version has an integrated Chrome web browser and has following restrictions if you plan to use this as a global proxy.</p>
-			<ul>
-				<li>Only works with Wi-Fi network.</li>
-				<li>Only works for several minutes. Due to iOS restrictions, Shadowsocks can't keep running in the background. It's killed after you leave it for a while. <span style="font-weight:bold">To keep it running for an extended period of time, you have to come back to the Shadowsocks app every few minutes</span>.</li>
-			</ul>
-			<br/>
-			<p>So, it's a bit tricky to set shadowsocks as global proxy.</p>
-			<ol>
-				<li>Set up proxy settings in shadowsocks.(like the GUI version)</li>
-				<li>Copy this link <span style="color:blue">http://127.0.0.1:8090/proxy.pac</span></li>
-				<li>Open iOS Settings -> Wi-Fi -><code> i </code> icon on the right of your connected Wi-Fi -> HTTP Proxy. Choose Auto, paste the link in the URL field. Tap back.</li>
-				<li>Other apps now go through the proxy. If they don't, kill and restart them.</li>
-				<li>Come back every few minutes to keep Shadowsocks running in the background.</li>
-			</ol>
+            <div class="tab-content">
+							<div class="tab-pane active" id="tab1">
+                <h2>GUI Clients<span></span></h2>
+                <ul class="list-group">
+                  <li class="list-group-item list-group-item-warning">
+                    <h3 class="list-group-item-heading">Install</h3>
 
-			<hr/>
+                    <p class="list-group-item-text">Install the desktop/mobile application on your local machine.</p>
+                  </li>
 
-			<p>The Linux user has some more steps to set in order to make the proxy work in different situations.</p>
-			<ul>
-				<li> For web browse
-					<ol>
-						<li>Get a proxy setting tool for browser. For Chrome, use <code>switchySharp</code> or <code>switchyOmega</code>. For others, go find yourself. :)</li>
-						<li>For Global Proxy. Create a new proxy profile. Choose <span style="font-weight:bold">Proxy Profile</span>. Select the <span style="font-weight:bold">Protocol</span> tab as <code>SOCKS5</code>, fill the <span style="font-weight:bold">Server</span> as <code>127.0.0.1</code>,  with the <span style="font-weight:bold">Port</span> as <code>12345</code>.</li>
-						<li>For PAC Proxy. Create a new proxy profile. Choose <span style="font-weight:bold">Switch Profile</span>. In the <span style="font-weight:bold">Rule List Config</span>, select <span style="font-weight:bold">AutoProxy</span> and fill this URL <span style="color:blue">http://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt</span>. And in the <span style="font-weight:bold">Switchy Rules</span>, enable the Rule list rules as the global proxy you set in the last step.
-					</ol>
-				</li>
-				<br/>
-				<li> For command-line Proxy
-				<p>Please forward to <a href="https://github.com/shadowsocks/shadowsocks/wiki/Using-Shadowsocks-with-Command-Line-Tools">this issue on github</a> to find a solution.</p>
-				</li>
-			</ul>
+                  <li class="list-group-item">
+          					<h3 class="list-group-item-heading">Edit the Parameters.</h3>
 
-		</div>
-		<div id="qa">
-			<h3>Q&A<span></span></h3>
-			<p>If you meet any problem, please contact <span style="font-weight:bold">Administrator(Allen.3.ysj@gmail.com)</span>.</p>
-		</div>
-	</div>
-	<div class="clear"></div>
-	<footer style="width: 350px;margin:2px auto">Copyright &copy;2015 MARS. All Rights Reserved.</footer>
-</body>
+                    <p class="list-group-item-text">Run the application and edit the configuration parameters.</p>
+          					<ul class="list-group">
+          						<li class="list-group-item">Address: <span class="badge">Please ask the administrator</span></li>
+          						<li class="list-group-item">Server port: <span class="badge">Please ask the administrator</span></li>
+          						<li class="list-group-item">password: <span class="badge">Please ask the administrator</span></li>
+          						<li class="list-group-item">Encryption method: rc4-md5</li>
+          						<li class="list-group-item">Remark: MarsProxy</li>
+          						<li class="list-group-item">Proxy Port: <span class="badge">Please ask the administrator</span></li>
+          					</ul>
+          				</li>
+
+                  <li class="list-group-item">
+                    <h3 class="list-group-item-heading">Advanced configuration</h3>
+
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Save the configuration.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Rightclick the background running program.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Choose <span class="label label-primary">MarsProxy</span> in <span class="label label-primary">Server</span> tab of main menu.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Click <span class="label label-primary">Update PAC from GFWList</span> of main menu and wait for its finishing.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Choose <span class="label label-primary">PAC Mode</span>in <span class="label label-primary">System Proxy Mode</span> of main menu.</p>
+                      </li>
+                    </ul>
+
+                  </li>
+
+                  <li class="list-group-item">
+                    <h3 class="list-group-item-heading">Enable configuration</h3>
+
+                    <p class="list-group-item-text">Choose <span class="label label-primary">Launch system proxy</span> in the main menu.</p>
+                  </li>
+                </ul><!-- end list-group -->
+							</div><!-- end tab1 -->
+
+              <div class="tab-pane" id="tab2">
+                <h2>Command-line Client for Linux<span></span></h2>
+          			<ul class="list-group">
+          				<li class="list-group-item">
+          					<h3 class="list-group-item-heading">Unzip the package and install the Client.</h3>
+
+                    <h4 class="list-group-item-heading"><span class="label label-primary">Debian/Ubuntu</span></h4>
+                    <div class="code">
+                      <p><code># apt-get install python-pip</code></p>
+                      <p><code># pip install shadowsocks</code></p>
+                    </div>
+
+
+                    <h4 class="list-group-item-heading"><span class="label label-primary">CentOS</span></h4>
+                    <div class="code">
+                      <p><code># yum install python-setuptools && easy_install pip </code></p>
+                      <p><code># pip install shadowsocks</code></p>
+                    </div>
+          				</li>
+
+          				<li class="list-group-item">
+          					<h3 class="list-group-item-heading">Configure the parameters and run the program.</span></h3>
+
+                    <p>Run the shadowsocks as daemon, just type the following commands: </p>
+
+                    <span class="badge">Please ask the administrator for vital fields</span>
+                    <div class="code">
+                      <p><code># sslocal -s server_address -p port_number -k password -m rc4-md5 -d start</code></p>
+                    </div>
+          				</li>
+
+          				<li class="list-group-item">
+          					<h3>Lauch Configuration Files(Alternative)</h3>
+
+          					<ul class="list-group">
+          						<li class="list-group-item">
+          							<h4>Create a config file.</h4>
+          							<div class = "code">
+          								<p><code># touch /etc/shadowsocks.json</code></p>
+          							</div>
+          						</li>
+
+          						<li class="list-group-item">
+          						  <h4>Includes following entries inside a pair of braces</h4>
+
+                        <ul class="list-group">
+                          <li class="list-group-item">"server" : "myServerAddress"<span class="badge">Please ask the administrator</span></li>
+                          <li class="list-group-item">"server_port" : 00000<span class="badge">Please ask the administrator</span></li>
+                          <li class="list-group-item">"local_port" : 00000<span class="badge">Please ask the administrator</span></li>
+                          <li class="list-group-item">"password" : "blablabla"<span class="badge">Please ask the administrator</span></li>
+                          <li class="list-group-item">"method" : "rc4-md5"</li>
+                        </ul>
+
+          						</li>
+
+          						<li class="list-group-item">
+          							<p>Then run the command:</p>
+          							<div class="code">
+          								<p><code># sslocal -c /etc/shadowsocks.json -d start</code></p>
+          							</div>
+          						</li>
+          					</ul>
+          				</li>
+          			</ul>
+							</div><!-- end tab2 -->
+
+              <div class="tab-pane" id="tab3">
+                <h2>SwitchyOmega configurations</h2>
+
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <p class="list-group-item-text">Choose <span class="label label-default">Options</span> to open the configure page.</p>
+                  </li>
+
+                  <li class="list-group-item">
+                    <h3 class="list-group-item-heading">Configure Global Profile</h3>
+
+                    <p class="lsit-group-item-text">This Global Profile enables proxy server
+                      undertake all network connections inside Chrome.</p>
+
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Choose <span class="label label-default">GLOBAL</span> in <span class="label label-default">PROFILES</span> tab in the menu left.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">In the <span class="label label-info">Proxy Servers</span> entry of main page,
+                          select <span class="label label-default">SOCKS5</span> as the protocol,
+                          fill <span class="label label-default">Server</span> with 127.0.0.1 and
+                          <span class="label label-default">Port</span> with 1080.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Click <span class="label label-default">Apply changes</span> in <span class="label label-default">ACTIONS</span> tab in the menu left.</p>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="list-group-item">
+                    <h3 class="list-group-item-heading">Configure Auto Switch Profile</h3>
+
+                    <p class="lsit-group-item-text">This Auto Swtich Profile enables Chrome to choose whether
+                     to go through proxy server or connect directly dependending on the list which contains
+                      websites blocked by GFW.</p>
+
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Choose <span class="label label-default">Auto_Switch</span> in <span class="label label-default">PROFILES</span> tab in the menu left.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">In the <span class="label label-info">Rule List Config</span> entry of main page,
+                          choose <span class="label label-default">AutoProxy</span> as the Rule List Format,
+                          fill <span class="label label-default">Rule List URL</span> with <code>http://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt</code> and
+                          click the button <span class="label label-default">Download Profile Now</span> to download the filter file.
+                          <span class="label label-warning">If the downloading process failed, try to choose GLOBAL in the plug-in button to download the list through proxy server</span></p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Click <span class="label label-default">Apply changes</span> in <span class="label label-default">ACTIONS</span> tab in the menu left.</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </div><!-- end tab3 -->
+            </div><!-- end tab-content -->
+
+
+
+          </div><!-- end tabbable -->
+
+        </div><!-- end col-sm-12 -->
+      </div><!-- end tutorialBody -->
+
+      <div class="row" id="bigCallout">
+				<div class="col-12">
+
+					<div class="well">
+						<div class="page-header">
+							<h1>SwitchyOmega <small>A plug-in inside Chrome to manage proxies.</small></h1>
+						</div><!-- end page-header -->
+
+						<p class="lead">SwitchyOmega is a perfect match of MarsProxy to make your proxies
+              switching easily and smoothly, which is a necessary gadget
+              for <i class="fa fa-linux"></i>Linux user.(Optional for <i class="fa fa-windows"></i>Windows and <i class="fa fa-apple"></i>OS X user)</p>
+
+            <p class="lead">It can be grabbed from <i class="fa fa-google"></i>Google Play Store or just click the button below for an "offline installation" package.
+              And refer to the link beside to learn how to use it.</p>
+
+						<a href="https://github.com/FelisCatus/SwitchyOmega/releases/download/v2.3.14/SwitchyOmega.crx" class="btn btn-large btn-primary" id="alertMe">Download .crx Package</a>
+						<a href="https://github.com/FelisCatus/SwitchyOmega/releases" class="btn btn-large btn-link">or Official Release Info.</a>
+					</div><!-- end well -->
+
+				</div><!-- end col-12 -->
+			</div><!-- end bigCallout -->
+
+
+    </div><!-- end main -->
+
+
+
+
+
+    <!-- All Javascript at the bottom of page for faster loading -->
+
+    <!-- First try for the online version of jQuery-->
+  	<!--script src="http://code.jquery.com/jquery.js"></script-->
+
+  	<!-- If no online access, fallback to our hardcoded version of jQuery -->
+  	<script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="includes/js/script.js"></script>
+  </body>
 </html>
