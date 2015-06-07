@@ -94,6 +94,7 @@
 						<ul class="nav nav-tabs">
 							<li class="active"><a href="#tab1" data-toggle="tab">GUI Clients</a></li>
 							<li><a href="#tab2" data-toggle="tab">Command line clients</a></li>
+              <li><a href="#tab3" data-toggle="tab">SwitchyOmega Configurations</a></li>
 						</ul>
 
             <div class="tab-content">
@@ -220,6 +221,67 @@
           				</li>
           			</ul>
 							</div><!-- end tab2 -->
+
+              <div class="tab-pane" id="tab3">
+                <h2>SwitchyOmega configurations</h2>
+
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <p class="list-group-item-text">Choose <span class="label label-default">Options</span> to open the configure page.</p>
+                  </li>
+
+                  <li class="list-group-item">
+                    <h3 class="list-group-item-heading">Configure Global Profile</h3>
+
+                    <p class="lsit-group-item-text">This Global Profile enables proxy server
+                      undertake all network connections inside Chrome.</p>
+
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Choose <span class="label label-default">GLOBAL</span> in <span class="label label-default">PROFILES</span> tab in the menu left.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">In the <span class="label label-info">Proxy Servers</span> entry of main page,
+                          select <span class="label label-default">SOCKS5</span> as the protocol,
+                          fill <span class="label label-default">Server</span> with 127.0.0.1 and
+                          <span class="label label-default">Port</span> with 1080.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Click <span class="label label-default">Apply changes</span> in <span class="label label-default">ACTIONS</span> tab in the menu left.</p>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="list-group-item">
+                    <h3 class="list-group-item-heading">Configure Auto Switch Profile</h3>
+
+                    <p class="lsit-group-item-text">This Auto Swtich Profile enables Chrome to choose whether
+                     to go through proxy server or connect directly dependending on the list which contains
+                      websites blocked by GFW.</p>
+
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Choose <span class="label label-default">Auto_Switch</span> in <span class="label label-default">PROFILES</span> tab in the menu left.</p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">In the <span class="label label-info">Rule List Config</span> entry of main page,
+                          choose <span class="label label-default">AutoProxy</span> as the Rule List Format,
+                          fill <span class="label label-default">Rule List URL</span> with <code>http://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt</code> and
+                          click the button <span class="label label-default">Download Profile Now</span> to download the filter file.
+                          <span class="label label-warning">If the downloading process failed, try to choose GLOBAL in the plug-in button to download the list through proxy server</span></p>
+                      </li>
+
+                      <li class="list-group-item">
+                        <p class="list-group-item-text">Click <span class="label label-default">Apply changes</span> in <span class="label label-default">ACTIONS</span> tab in the menu left.</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </div><!-- end tab3 -->
             </div><!-- end tab-content -->
 
 
