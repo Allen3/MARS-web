@@ -1,0 +1,153 @@
+/*
+ * typography
+*/
+@font-face {
+  font-family: ubuntu;
+  src:url('../../fonts/ubuntu-font-family-0.80/Ubuntu-R.ttf');
+}
+
+body {
+  font-family: ubuntu;
+  font-size: 16px;
+  padding-top: 70px;
+}
+
+/*
+ * navbar
+*/
+#navbar {
+  height: 40px;
+  font-size: 20px;
+  font-family: ubuntu;
+}
+
+.dropdown-menu {
+  font-size: 16px;
+}
+
+/*
+ * jumbotron
+*/
+#myJumbotron {
+  font-size: 24px;
+}
+
+/*
+ * Carousel
+*/
+
+#myCarousel {
+	margin-top: 60px;
+}
+
+.carousel-caption {
+	font-size: 24px;
+}
+
+.carousel-caption h4 {
+	font-size: 32px;
+}
+
+#myCarousel .item { height: 400px; }
+
+#slide1 {
+	background: url('../../images/shadowsocks_medium.png') top center no-repeat;
+}
+
+#slide2 {
+	background: url('../../images/ownclou_medium.png') top center no-repeat;
+}
+
+/*
+ * row
+*/
+.row h3 {
+  font-size: 32px;
+}
+
+#buttonProxyWell, #buttonCloudWell {
+  width: 200px;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+#proxyWellContainer, #cloudWellContainer {
+  margin-top: 50px;
+}
+
+#proxyWellContainer {
+  padding-left: 0;
+}
+
+#cloudWellContainer {
+  padding-right: 0;
+}
+
+.timecost {
+	font-size: 22px;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	padding: 10px;
+}
+
+/*
+ * footer
+*/
+
+footer {
+	background: #333;
+	color: #eee;
+	padding: 20px;
+}
+
+/*
+ * Media Queries
+*/
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  body {
+    padding-top: 180px;
+  }
+
+	#myCarousel .item { height: 310px; }
+
+  .carousel-caption {
+		font-size: 16px;
+	}
+
+	.carousel-caption h4 {
+		font-size: 22px;
+	}
+
+	#slide1 {
+		background: url('../../images/shadowsocks_small.png') top center no-repeat;
+	}
+
+	#slide2 {
+		background: url('../../images/owncloud_small.png') top center no-repeat;
+	}
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+	#myCarousel .item { height: 500px; }
+
+	#slide1 {
+		background: url('../../images/shadowsocks_large.png') top center no-repeat;
+	}
+
+	#slide2 {
+		background: url('../../images/owncloud_large.png') top center no-repeat;
+	}
+
+
+}

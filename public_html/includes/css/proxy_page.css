@@ -71,3 +71,35 @@ body {
 .tab-content .list-group-item-text {
   line-height: 200%;
 }
+
+/*
+ * footer
+*/
+
+footer {
+	background: #333;
+	color: #eee;
+	padding: 20px;
+}
+
+/*
+ * Media Queries
+*/
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  body {
+    padding-top: 250px;
+  }
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
