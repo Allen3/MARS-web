@@ -63,6 +63,10 @@ body {
   margin-bottom: 50px;
 }
 
+#todo {
+  padding-bottom: 300px;
+}
+
 .tab-content {
   font-size: 16px;
 }

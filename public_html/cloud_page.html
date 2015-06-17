@@ -78,11 +78,64 @@
         <h1>Mars Cloud</h1>
         <p>Please download the proper application served on the navigation bar
           or forward to Web version to download them yourself.</p>
-          <p id="changeDNS">Please set your local machine's DNS to <code>192.168.10.205</code> first.</p>
-          <p>Visit <code>https://marscloud.loc</code> on your browser and log in with the account
-            which Administrator assign to you.</p>
-        <p><a class="btn btn-primary btn-lg" href="https://marscloud.loc" role="button" id="tutorialButton">Go check it!</a></p>
+        <p><a class="btn btn-primary btn-lg" href="#tutorialBody" role="button" id="tutorialButton">Tutorial</a></p>
       </div>
+
+      <div class="row" id="tutorialBody">
+        <div class="col-sm-12">
+
+          <div class="tabbable">
+						<ul class="nav nav-tabs" id="tutorialTabs">
+							<li class="active"><a href="#tab1" data-toggle="tab">Modify Hosts File</a></li>
+							<li><a href="#tab2" data-toggle="tab">Change DNS Server</a></li>
+						</ul>
+
+            <div class="tab-content">
+							<div class="tab-pane active" id="tab1">
+                <h2>Modify Hosts File<span></span></h2>
+                <ul class="list-group">
+                  <li class="list-group-item">
+          					<h3 class="list-group-item-heading">Find your hosts file.</h3>
+
+                    <h4 class="list-group-item-heading"><span class="label label-primary">Unix</span></h4>
+                    <p class="list-group-item-text">/etc/hosts</p>
+
+                    <h4 class="list-group-item-heading"><span class="label label-primary">OS X</span></h4>
+                    <p class="list-group-item-text">/etc/hosts</p>
+
+                    <h4 class="list-group-item-heading"><span class="label label-primary">Windows</span></h4>
+                    <p class="list-group-item-text">C:\Windows\system32\drivers\etc\hosts</p>
+          				</li>
+
+                  <li class="list-group-item">
+                    <span class="badge">You need to gain the permission of admin before you proceed</span>
+                    <h3 class="list-group-item-heading">Modify it.</h3>
+                    <p class="list-group-item-text">Add an entry as <code>192.168.10.207 marscloud.loc</code></p>
+                  </li>
+
+                </ul><!-- end list-group -->
+							</div><!-- end tab1 -->
+
+              <div class="tab-pane" id="tab2">
+                <h2>Change DNS Server<span></span></h2>
+          			<p id="todo">Sorry we are still working on it!</p>
+							</div><!-- end tab2 -->
+
+            </div><!-- end tab-content -->
+
+          </div><!-- end tabbable -->
+
+        </div><!-- end col-sm-12 -->
+      </div><!-- end tutorialBody -->
+
+      <div class="row" id="bigCallout">
+				<div class="col-12">
+          <div class="well">
+						<a href="https://marscloud.loc" class="btn btn-large btn-primary" id="alertMe">Go and check it!</a>
+					</div><!-- end well -->
+
+				</div><!-- end col-12 -->
+			</div><!-- end bigCallout -->
 
     </div><!-- end main -->
 
