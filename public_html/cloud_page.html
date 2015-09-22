@@ -56,13 +56,13 @@
             </ul><!-- end nav navbar -->
 
             <ul class="nav navbar-nav pull-right">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Downloads <strong class="caret"></strong></a>
+              <li class="dropdown" id="DropdownMenu">
+                <a class="dropdown-toggle" id="showDropdownMenu" style="cursor:pointer">Downloads <strong class="caret"></strong></a>
 
                 <ul class="dropdown-menu list-group" id="downloadMenu">
                   <li class="list-group-item"><a href="Owncloud_Bundle/ownCloud-1.8.1.5050-setup.exe"><i class="fa fa-windows"></i>&nbsp;GUI Client for Windows</a></li>
             			<li class="list-group-item"><a href="Owncloud_Bundle/ownCloud-1.8.1.2335.pkg"><i class="fa fa-apple"></i>&nbsp;GUI Client for MAC</a></li>
-            			<li class="list-group-item"><a href="https://software.opensuse.org/download/package?project=isv:ownCloud:desktop&package=owncloud-client"><i class="fa fa-apple"></i>&nbsp;GUI Client for Linux</a></li>
+            			<li class="list-group-item"><a href="https://software.opensuse.org/download/package?project=isv:ownCloud:desktop&package=owncloud-client"><i class="fa fa-linux"></i>&nbsp;GUI Client for Linux</a></li>
                 </ul>
 
               </li><!-- end dropdown -->
@@ -92,7 +92,9 @@
 
             <div class="tab-content">
 							<div class="tab-pane active" id="tab1">
-                <h2>Modify Hosts File<span></span></h2>
+                <h2>Modify Hosts File     <a href="Owncloud_Bundle/ChangeHost.exe" class="btn btn-large btn-primary" id="WinTool">Tool for Windows</a>
+                  <a  class="btn btn-large btn-primary" id="OSXTool">Tool for OS X</a>
+                  <a href="Owncloud_Bundle/ChangeHostforLinux" class="btn btn-large btn-primary" id="LinuxTool">Tool for Linux</a><span></span></h2>
                 <ul class="list-group">
                   <li class="list-group-item">
           					<h3 class="list-group-item-heading">Find your hosts file.</h3>
@@ -112,6 +114,11 @@
                     <h3 class="list-group-item-heading">Modify it.</h3>
                     <p class="list-group-item-text">Add an entry as <code>192.168.10.207 marscloud.loc</code></p>
                   </li>
+                    <li class="list-group-item">
+                        <span class="badge">After clicking the button. You will need to go back here to continue.</span>
+                        <a href="https://marscloud.loc" class="btn btn-large btn-primary" id="alertMe">Go and check it!</a>
+                    </li>
+
 
                 </ul><!-- end list-group -->
 							</div><!-- end tab1 -->
@@ -128,16 +135,80 @@
         </div><!-- end col-sm-12 -->
       </div><!-- end tutorialBody -->
 
-      <div class="row" id="bigCallout">
-				<div class="col-12">
-          <div class="well">
-						<a href="https://marscloud.loc" class="btn btn-large btn-primary" id="alertMe">Go and check it!</a>
-					</div><!-- end well -->
 
-				</div><!-- end col-12 -->
-			</div><!-- end bigCallout -->
+      <div class="tab-content">
+            <h2>Issue dealing on first-opening of the ownCloud<span></span></h2>
+          <ul class="list-group">
+            <span class="list-group-item">
+                <span class="badge">This problem is caused by an unauthorised certificate written by ourself.</span>
+              <h4 class="list-group-item-heading"><span class="label label-primary">Google Chrome</span></h4>
+                <img src="images/owncloud_alert_page_chrome.png">
+              <p class="list-group-item-text">Click "高级" and then click "继续前往marscloud.loc（不安全)"</p>
+
+
+                </span>
+            <li class="list-group-item">
+            <h4 class="list-group-item-heading"><span class="label label-primary">Internet Explorer</span></h4>
+            <img src="images/owncloud_alert_page_ie.png">
+            <p class="list-group-item-text">Click "单击此处关闭该网页"</p>
+            </li>
+
+
+            <li class="list-group-item">
+            <a href="https://marscloud.loc" class="btn btn-large btn-primary" id="alertMeAgain">Go and check Again!</a>
+            </li>
+          </ul><!-- end list-group -->
+
 
     </div><!-- end main -->
+
+        <div class="tab-content">
+      <h2>Login your ownCloud<span></span></h2>
+      <ul class="list-group">
+            <span class="list-group-item">
+              <h4 class="list-group-item-heading"><span class="label label-primary">Main Page</span></h4>
+                <span class="badge">Ask the administrator if you forgot the password.</span>
+                <img src="images/owncloud_mainpage.png">
+              <p class="list-group-item-text">Login with your user name and the given password.</p>
+
+                </span>
+
+        <li class="list-group-item">
+          <h4 class="list-group-item-heading"><span class="label label-primary">Welcome Page</span></h4>
+          <span class="badge">ownCloud is only available on the LAN in our lab.</span>
+          <img src="images/owncloud_welcome_page.png" width="70%" height="70%">
+          <p class="list-group-item-text">If you login for the first time, you can click to download clients.</p>
+          <p class="list-group-item-text" style="color: #c9302c">(For faster connection, you can download desktop clients from the <a id="downloadLink" style="cursor:pointer">up-right corner</a> of the page)</p>
+
+        </li>
+
+      </ul><!-- end list-group -->
+
+
+    </div><!-- end main -->
+
+      <div class="tab-content">
+        <h2>Manage your files<span></span></h2>
+        <ul class="list-group">
+            <span class="list-group-item">
+              <h4 class="list-group-item-heading"><span class="label label-primary">Files Page</span></h4>
+                <span class="badge">The special icon indicates the file is shared by "SomeBoy".</span>
+                <img src="images/owncloud_files_page.png" height="70%" width="70%">
+              <p class="list-group-item-text">You can access all your files on your cloud disk by clicking them. You can also access files your friends share with you.</p>
+            </span>
+            <li class="list-group-item">
+              <h4 class="list-group-item-heading"><span class="label label-primary">File Sharing</span></h4>
+              <span class="badge">Currently you can not share files with a group.</span>
+              <img src="images/owncloud_file_operation.png" height="70%" width="70%">
+              <p class="list-group-item-text">Move your cursor on one of your file to show operation icon. Then click "共享".</p>
+              <span class="badge">You can also share files your friends share with you.</span>
+              <img src="images/owncloud_file_sharebox.png" height="45%" width="45%">
+              <p class="list-group-item-text">Just enter the person's name in the Input box. Then the file is shared</p>
+            </li>
+        </ul><!-- end list-group -->
+
+
+      </div><!-- end main -->
 
     <footer>
       <div class="container">
@@ -147,11 +218,11 @@
           </div>
 
           <div class="col-sm-3">
-            <h4>Coded with <i class="fa fa-laptop"></i> by Allen</h4>
+            <h4>Coded with <i class="fa fa-laptop"></i> by Allen & BabyRan</h4>
           </div>
 
           <div class="col-sm-3">
-            <h4>Follow me</h4>
+            <h4>Follow Allen3</h4>
 
             <ul class="unstyled">
               <li><a href="https://github.com/Allen3/">Github</a></li>
