@@ -1,11 +1,9 @@
 $(document).ready(function() {
-    $("#showDropdownMenu").click(function() {
-        $("#DropdownMenu").toggleClass("open");
-    });
     $("#downloadLink").click(function() {
-        var li = $("#DropdownMenu");
-        if(!li.hasClass("open")) {
-            $("#DropdownMenu").addClass("open");
+        if($("#DropdownMenu").hasClass("open")) {
+            return false;
         }
+        $("#showDropdownMenu").click();
+        return false;
     });
 });
